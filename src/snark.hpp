@@ -59,7 +59,7 @@ boost::optional<r1cs_ppzksnark_proof<ppzksnark_ppT>> generate_payment_in_out_pro
     g.generate_payment_in_out_constraints();
     g.generate_payment_in_out_witness(h_startbalance, h_endbalance, h_incoming, h_outgoing, r_startbalance, r_endbalance, r_incoming, r_outgoing);
 
-    if (!pb.is_satisfied()) {
+    if (!pb.is_satisfied()) {     
       std::cout << "System not satisfied!" << std::endl;
         return boost::none;
     }
@@ -80,7 +80,7 @@ boost::optional<r1cs_ppzksnark_proof<ppzksnark_ppT>> generate_payment_multi_proo
                                                             const bit_vector *r_outgoing
                                                             )
 {
-    typedef Fr<ppzksnark_ppT> FieldT;
+     typedef Fr<ppzksnark_ppT> FieldT;
 
     protoboard<FieldT> pb;
     payment_multi_gadget<FieldT> g(pb);
